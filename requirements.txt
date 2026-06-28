@@ -1,0 +1,13 @@
+langgraph
+langchain-core==0.3.74
+langchain==0.3.27
+langchain-openai
+langchain-community==0.3.30
+tavily-python
+python-dotenv
+ipython
+jupyter
+langchain-google-genai
+Streamlit
+langchain-cohere==0.6.0
+
