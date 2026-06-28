@@ -6,6 +6,7 @@ from langchain_community.tools import TavilySearchResults
 
 load_dotenv("config.env")
 
+COHERE_API_KEY = os.getenv["COHERE_API_KEY"]
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
 assert TAVILY_API_KEY

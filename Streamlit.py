@@ -13,41 +13,6 @@ st.title("🩺 Medical HealthBot")
 st.caption("AI-Powered Patient Education System")
 
 
-if "api_key" not in st.session_state:
-    st.session_state.api_key = ""
-
-if st.session_state.api_key == "":
-
-    st.markdown("""
-# 👋 Welcome!
-
-I am **Medical HealthBot: AI-Powered Patient Education System** 🩺
-
-Before we begin, you'll need a **Cohere API Key**.
-
-Please enter your API Key below to continue.
-""")
-
-    api = st.text_input(
-        "🔑 Cohere API Key",
-        type="password",
-        placeholder="Enter your Cohere API Key"
-    )
-
-    if st.button("Continue"):
-
-        if api.strip() == "":
-            st.error("Please enter a valid Cohere API Key.")
-            st.stop()
-
-        st.session_state.api_key = api
-        os.environ["COHERE_API_KEY"] = api
-
-        st.success("✅ API Key Verified")
-        st.rerun()
-
-    st.stop()
-
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
