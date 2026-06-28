@@ -58,6 +58,11 @@ if "state" not in st.session_state:
 if "reply" not in st.session_state:
     st.session_state.reply = ""
 
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
+
 user_input = st.chat_input("Type here...")
 
 if user_input:
