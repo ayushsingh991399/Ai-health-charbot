@@ -56,7 +56,7 @@ if "state" not in st.session_state:
     st.session_state.state = {}
 
 if "reply" not in st.session_state:
-    st.session_state.reply = ""ne
+    st.session_state.reply = ""
 
 
 for msg in st.session_state.messages:
