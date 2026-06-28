@@ -129,6 +129,16 @@ elif st.session_state.stage == "continue":
 
         st.session_state.stage = "topic"
 
+        st.session_state.messages.append(
+            {
+                "role": "assistant",
+                "content": reply
+            }
+        )
+
+        with st.chat_message("assistant"):
+            st.markdown(reply)
+
     elif user_input.lower() == "no":
 
         # Show goodbye message
@@ -144,11 +154,10 @@ elif st.session_state.stage == "continue":
         with st.chat_message("assistant"):
             st.markdown(reply)
 
-        # Small pause (optional)
         import time
         time.sleep(2)
 
-        # Clear chat history
+        # Reset chatbot
         st.session_state.messages = [
             {
                 "role": "assistant",
@@ -176,7 +185,6 @@ I can help you:
             }
         ]
 
-        # Reset state
         st.session_state.state = {}
         st.session_state.stage = "topic"
 
@@ -184,18 +192,17 @@ I can help you:
 
     else:
 
-        reply = "Please enter **yes** or **no**."
+        reply = "Please type **yes** or **no**."
 
-    else:
+        st.session_state.messages.append(
+            {
+                "role": "assistant",
+                "content": reply
+            }
+        )
 
-        reply="Session Ended."
-
-    st.session_state.messages.append(
-        {
-            "role":"assistant",
-            "content":reply
-        }
-    )
+        with st.chat_message("assistant"):
+            st.markdown(reply)
 
     with st.chat_message("assistant"):
         st.markdown(reply)
