@@ -97,6 +97,7 @@ if user_input:
             result["summary"] +
             "\n\n---\n\n"
             "**Would you like to take a quiz? (yes/no)**"
+            "**if yes which Type MCQ or Simple Comprehension Question**"
         )
 
         st.session_state.stage = "ready"
