@@ -7,6 +7,7 @@ class HealthState(TypedDict):
     search_results: List
     summary: str
     ready: str
+    quiz_type: str
     quiz_question: str
     user_answer: str
     feedback: str
