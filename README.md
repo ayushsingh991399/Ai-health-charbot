@@ -66,10 +66,6 @@ Display Summary
   ▼
 Ready Check
   │
-  ├
-  │
- Yes
-  │
   ▼
 Generate Quiz
   │
