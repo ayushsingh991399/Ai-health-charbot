@@ -67,9 +67,6 @@ user_input = st.chat_input("Type here...")
 
 if user_input:
 
-    # -----------------------
-    # User Message
-    # -----------------------
 
     st.session_state.messages.append(
         {
@@ -97,7 +94,6 @@ if user_input:
             result["summary"] +
             "\n\n---\n\n"
             "**Would you like to take a quiz? (yes/no)**"
-            "**if yes which Type MCQ or Simple Comprehension Question**"
         )
 
         st.session_state.stage = "ready"
